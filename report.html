@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Comparison Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .table-container {
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Performance Comparison Report</h1>
+    
+    <h2>Introduction</h2>
+    <p>This report contains a detailed analysis of the performance, energy efficiency, and speedup between CPU and GPU for different data dimensions.</p>
+
+    <h2>CPU Data</h2>
+    <p>The following table displays the CPU data:</p>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Dim</th>
+                <th>CPU Execution Time (ms)</th>
+                <th>CPU Performance (GFLOP/s)</th>
+                <th>CPU Energy (J)</th>
+                <th>Power Efficiency (GFLOP/J)</th>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>23.966</td>
+                <td>83.4514</td>
+                <td>1.19830</td>
+                <td>1.66903</td>
+            </tr>
+            <tr>
+                <td>1500</td>
+                <td>72.547</td>
+                <td>93.0432</td>
+                <td>3.62735</td>
+                <td>1.86086</td>
+            </tr>
+            <tr>
+                <td>2000</td>
+                <td>171.136</td>
+                <td>93.4928</td>
+                <td>8.55681</td>
+                <td>1.86986</td>
+            </tr>
+            <tr>
+                <td>2500</td>
+                <td>334.927</td>
+                <td>93.3038</td>
+                <td>16.74640</td>
+                <td>1.86608</td>
+            </tr>
+            <tr>
+                <td>3000</td>
+                <td>667.824</td>
+                <td>80.8597</td>
+                <td>33.39120</td>
+                <td>1.61719</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>GPU Data</h2>
+    <p>The following table displays the GPU data:</p>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Dim</th>
+                <th>GPU Execution Time (ms)</th>
+                <th>GPU Performance (GFLOP/s)</th>
+                <th>GPU Energy (J)</th>
+                <th>Power Efficiency (GFLOP/J)</th>
+                <th>Speedup (x)</th>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>0.151142</td>
+                <td>13232.6</td>
+                <td>0.022671</td>
+                <td>88.217</td>
+                <td>158.566</td>
+            </tr>
+            <tr>
+                <td>1500</td>
+                <td>0.456806</td>
+                <td>14776.5</td>
+                <td>0.068521</td>
+                <td>98.510</td>
+                <td>158.813</td>
+            </tr>
+            <tr>
+                <td>2000</td>
+                <td>1.021640</td>
+                <td>15661.0</td>
+                <td>0.153247</td>
+                <td>104.407</td>
+                <td>167.510</td>
+            </tr>
+            <tr>
+                <td>2500</td>
+                <td>2.008780</td>
+                <td>15556.7</td>
+                <td>0.301317</td>
+                <td>103.711</td>
+                <td>166.732</td>
+            </tr>
+            <tr>
+                <td>3000</td>
+                <td>3.337520</td>
+                <td>16179.7</td>
+                <td>0.500628</td>
+                <td>107.864</td>
+                <td>200.096</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Analysis</h2>
+    <p>We can observe that the GPU significantly outperforms the CPU in terms of performance and power efficiency across all data dimensions. The speedup factor also showcases the acceleration achieved by utilizing the GPU for computation tasks.</p>
+    
+    <h2>Comparison</h2>
+    <p>The comparison between GPU and CPU data is summarized in the following table:</p>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th></th>
+                <th>CPU</th>
+                <th>GPU</th>
+            </tr>
+            <tr>
+                <td>Overall Performance (GFLOP/s)</td>
+                <td>85.2342</td>
+                <td>15061.10</td>
+            </tr>
+            <tr>
+                <td>Overall Energy (J)</td>
+                <td>63.52086</td>
+                <td>1.04639</td>
+            </tr>
+            <tr>
+                <td>Overall Power Efficiency (GFLOP/J)</td>
+                <td>1.76640</td>
+                <td>100.246</td>
+            </tr>
+            <tr>
+                <td>Average Speedup</td>
+                <td colspan="2">170.3454</td>
+            </tr>
+        </table>
+    </div>
+
+    <img src="plot.png">
+    
+    <h2>Conclusion</h2>
+    <p>Based on the data analysis and comparison, it is evident that using a GPU for parallel processing tasks offers significant benefits in terms of performance, energy efficiency, and speedup. Organizations looking to optimize computation tasks should consider leveraging GPU acceleration to enhance their processing capabilities.</p>
+
+</body>
+
+</html>

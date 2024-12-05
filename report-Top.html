@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPU vs GPU Performance Comparison</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        color: #333;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>CPU vs GPU Performance Comparison Report</h1>
+
+    <h2>Introduction</h2>
+    <p>This report compares the performance and efficiency of CPU and GPU for varying input dimension sizes in a computing task. The data includes CPU execution time, performance, energy consumption, power efficiency, GPU execution time, performance, energy consumption, power efficiency, and speedup.</p>
+
+    <h2>Data Explanation</h2>
+
+    <h3>CPU Data</h3>
+    <p>The CPU data shows the execution time, performance, energy consumption, and power efficiency of the CPU for different input dimension sizes.
+    The CPU performance decreases as the input dimension size increases, resulting in longer execution times and higher energy consumption.</p>
+    <table>
+        <tr>
+            <th>Dim</th>
+            <th>CPU Execution Time (ms)</th>
+            <th>CPU Performance (GFLOP/s)</th>
+            <th>CPU Energy (J)</th>
+            <th>Power Efficiency (GFLOP/J)</th>
+        </tr>
+        <tr>
+            <td>1000</td>
+            <td>22.7961</td>
+            <td>87.7341</td>
+            <td>1.13981</td>
+            <td>1.75468</td>
+        </tr>
+        <tr>
+            <td>1500</td>
+            <td>72.4499</td>
+            <td>93.1678</td>
+            <td>3.62250</td>
+            <td>1.86336</td>
+        </tr>
+        <tr>
+            <td>2000</td>
+            <td>171.4800</td>
+            <td>93.3056</td>
+            <td>8.57398</td>
+            <td>1.86611</td>
+        </tr>
+        <tr>
+            <td>2500</td>
+            <td>335.3070</td>
+            <td>93.1983</td>
+            <td>16.76530</td>
+            <td>1.86397</td>
+        </tr>
+        <tr>
+            <td>3000</td>
+            <td>675.4130</td>
+            <td>79.9511</td>
+            <td>33.77060</td>
+            <td>1.59902</td>
+        </tr>
+    </table>
+
+    <h3>GPU Data</h3>
+    <p>The GPU data shows the execution time, performance, energy consumption, power efficiency, and speedup of the GPU for different input dimension sizes.
+    The GPU demonstrates significantly higher performance, lower energy consumption, and power efficiency compared to the CPU for the same task.</p>
+    <table>
+        <tr>
+            <th>Dim</th>
+            <th>GPU Execution Time (ms)</th>
+            <th>GPU Performance (GFLOP/s)</th>
+            <th>GPU Energy (J)</th>
+            <th>Power Efficiency (GFLOP/J)</th>
+            <th>Speedup (x)</th>
+        </tr>
+        <tr>
+            <td>1000</td>
+            <td>0.159232</td>
+            <td>12560.3</td>
+            <td>0.023885</td>
+            <td>83.7353</td>
+            <td>143.163</td>
+        </tr>
+        <tr>
+            <td>1500</td>
+            <td>0.457318</td>
+            <td>14760.0</td>
+            <td>0.068598</td>
+            <td>98.3997</td>
+            <td>158.423</td>
+        </tr>
+        <tr>
+            <td>2000</td>
+            <td>1.022050</td>
+            <td>15654.7</td>
+            <td>0.153308</td>
+            <td>104.3650</td>
+            <td>167.779</td>
+        </tr>
+        <tr>
+            <td>2500</td>
+            <td>2.007960</td>
+            <td>15563.0</td>
+            <td>0.301194</td>
+            <td>103.7540</td>
+            <td>166.989</td>
+        </tr>
+        <tr>
+            <td>3000</td>
+            <td>3.339060</td>
+            <td>16172.2</td>
+            <td>0.500859</td>
+            <td>107.8150</td>
+            <td>201.339</td>
+        </tr>
+    </table>
+
+    <h2>Comparison: CPU vs GPU</h2>
+    <p>When comparing the CPU and GPU performance based on the provided data:</p>
+    <ul>
+        <li>GPU has significantly higher performance (GFLOP/s) than CPU.</li>
+        <li>GPU consumes less energy (J) compared to CPU for the same task.</li>
+        <li>GPU exhibits higher power efficiency (GFLOP/J) than CPU across all input dimension sizes.</li>
+        <li>GPU shows a considerable speedup (x) over CPU, illustrating its computational advantages.</li>
+    </ul>
+
+    <img src="plot.png" alt="Performance Plot">
+
+    <h2>Conclusion</h2>
+    <p>In conclusion, the GPU outperforms the CPU in terms of performance, energy efficiency, power efficiency, and speedup for the given computing task. The utilization of GPU accelerators for parallel processing tasks can greatly enhance overall system performance and productivity.</p>
+</div>
+</body>
+</html>
